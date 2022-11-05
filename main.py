@@ -23,7 +23,7 @@ def ncov_report(username, password, name, is_useold):
     if get_res.status_code != 200:
         raise RuntimeError('get_res 状态码不是 200')
     try:
-        get_res.text)[0]
+        get_res.text
         print('get text success')
         old_data = json.loads('{' + re.search(r'(?<=oldInfo: {).+(?=})', get_res.text)[0] + '}')
     except:
